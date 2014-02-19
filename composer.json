@@ -1,0 +1,17 @@
+{
+    "name": "spindle/types",
+    "description": "Basic types for PHP object system",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hiraku NAKANO",
+            "email": "hiraku@tojiru.net"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {"Spindle\\Types\\": "src/"}
+    }
+}
