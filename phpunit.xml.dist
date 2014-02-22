@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+  colors="true"
+  bootstrap="tests/bootstrap.php">
+  <filter>
+    <whitelist>
+      <directory suffix=".php">src/</directory>
+    </whitelist>
+  </filter>
+  <!-- logging>
+    <log type="coverage-html" target="coverage/" charset="UTF-8" highlight="true"/>
+  </logging -->
+  <testsuite name="spindle-types TestSuite">
+    <directory>tests/</directory>
+  </testsuite>
+</phpunit>
