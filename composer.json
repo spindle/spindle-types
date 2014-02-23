@@ -13,5 +13,8 @@
     },
     "autoload": {
         "psr-4": {"Spindle\\Types\\": "src/"}
+    },
+    "require-dev": {
+        "apigen/apigen": "*"
     }
 }
