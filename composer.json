@@ -13,5 +13,10 @@
     },
     "autoload": {
         "psr-4": {"Spindle\\Types\\": "src/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "apigen/apigen": "*",
+        "pdepend/pdepend": "*"
     }
 }
