@@ -1,3 +1,4 @@
-/vendor/
-/coverage/
+node_modules/
+vendor/
+coverage/
 phpunit.xml

@@ -1,0 +1,27 @@
+{
+  "name": "spindle-types",
+  "version": "0.0.0",
+  "description": "strongly typing system for php",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-shell": "~0.6.4",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.7.1"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spindle/spindle-types.git"
+  },
+  "author": "Hiraku NAKANO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spindle/spindle-types/issues"
+  }
+}
