@@ -1,4 +1,3 @@
-
 module.exports = (grunt) ->
     grunt.initConfig
         shell:
@@ -11,8 +10,21 @@ module.exports = (grunt) ->
                 options: {stdout: true}
 
             pdepend:
-                command: 'php -dopen_basedir= vendor/bin/pdepend --jdepend-chart=builds/pdepend.svg --overview-pyramid=builds/pyramid.svg src/'
+                command: [
+                    'php -dopen_basedir= vendor/bin/pdepend'
+                    '--jdepend-chart=builds/pdepend.svg'
+                    '--overview-pyramid=builds/pyramid.svg'
+                    '--summary-xml=builds/summary.xml'
+                    'src/'
+                ].join ' '
                 options: {stdout: true}
+
+        connect:
+            server:
+                options:
+                    port: 9000
+                    base: 'builds'
+                    livereload: true
 
         watch:
             php:
@@ -21,8 +33,10 @@ module.exports = (grunt) ->
                     'src/**/*.php'
                     'tests/**/*.php'
                 ]
+                options:
+                    livereload: true
 
     require('load-grunt-tasks')(grunt)
 
-    grunt.registerTask 'default', ['watch']
+    grunt.registerTask 'default', ['connect', 'watch']
     grunt.registerTask 'all', ['shell']
