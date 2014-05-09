@@ -158,4 +158,18 @@ class TypedObjectTest extends TestCase
         $model = new ChildModel;
         self::assertTrue($model->propAdd);
     }
+
+    /**
+     * @test
+     */
+    function arrayExchange()
+    {
+        $some = SomeModel::fromArray(array(
+            'propInt' => 1
+        ));
+        self::assertInstanceOf(__NAMESPACE__ . '\SomeModel', $some);
+        self::assertSame(1, $some->propInt);
+
+        self::assertTrue(is_array($some->toArray()));
+    }
 }

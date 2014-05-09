@@ -209,4 +209,25 @@ abstract class TypedObject implements
     {
         return count($this->_storage);
     }
+
+    /**
+     * @param array $arr
+     * @return TypedObject
+     */
+    static function fromArray(array $arr)
+    {
+        $self = new static;
+        foreach ($arr as $key => $val) {
+            $self->__set($key, $val);
+        }
+        return $self;
+    }
+
+    /**
+     * @return array;
+     */
+    function toArray()
+    {
+        return $this->_storage;
+    }
 }
