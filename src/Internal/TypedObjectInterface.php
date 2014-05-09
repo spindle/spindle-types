@@ -1,8 +1,8 @@
 <?php
 /**
- * Spindle\Types\Internal\TypedObjectInterface
+ * spindle/types
  *
- *
+ * @license CC0-1.0 (Public Domain) https://creativecommons.org/publicdomain/zero/1.0/
  */
 namespace Spindle\Types\Internal;
 

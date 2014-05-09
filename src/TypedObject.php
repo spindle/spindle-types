@@ -1,8 +1,8 @@
 <?php
 /**
- * Spindle\Types\TypedObject
+ * spindle/types
  *
- * @license MIT
+ * @license CC0-1.0 (Public Domain) https://creativecommons.org/publicdomain/zero/1.0/
  */
 namespace Spindle\Types;
 
@@ -208,5 +208,26 @@ abstract class TypedObject implements
     function count()
     {
         return count($this->_storage);
+    }
+
+    /**
+     * @param array $arr
+     * @return TypedObject
+     */
+    static function fromArray(array $arr)
+    {
+        $self = new static;
+        foreach ($arr as $key => $val) {
+            $self->__set($key, $val);
+        }
+        return $self;
+    }
+
+    /**
+     * @return array;
+     */
+    function toArray()
+    {
+        return $this->_storage;
     }
 }

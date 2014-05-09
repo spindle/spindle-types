@@ -75,12 +75,67 @@ $taro->age = 20;
 //$taro->age = '20'; とすると、InvalidArgumentExceptionが発生して停止する
 ```
 
+型として指定できる値には以下のものがあります。
+
+- self::BOOL (真偽値)
+- self::INT  (整数)
+- self::DBL  (浮動小数点数)
+- self::STR  (文字列)
+- self::ARR  (配列)
+- self::OBJ  (オブジェクト)
+- self::RES  (リソース)
+- self::CALL (コールバック関数)
+- self::MIX  (型を指定なし)
+- className  クラス名/インターフェース名。完全修飾名で指定します。クラス名の場合、instanceofで判定を行います。
+
 `__get()`や`__set()`をfinalで固定化してしまうため、TypedObjectを継承するとクラスが持つ能力を一部奪うことになります。全てのクラスをTypedObjectから派生させて作るような設計は推奨しません。
 
-TypedObjectはforeachに対応しています。
-TypedObjectはcount()関数で要素数を数えることができます。
+TypedObjectはforeachに対応しています。(IteratorAggregate)
+TypedObjectはcount()関数で要素数を数えることができます。(Countable)
 
-### extends
+### TypedObject::$preventExtensions
+
+TypedObjectはデフォルト状態ではschema()で定義されていないプロパティへの代入・参照を拒否します。これはプロパティのタイプミスを発見しやすくする効果がありますが、不便に感じることもあるでしょう。
+
+TypedObject::$preventExtensionsをfalseにすると、未定義のプロパティを拒否せず、自動で拡張するようになります。(デフォルトはtrue)
+
+```php
+<?php
+use Spindle\Types;
+
+class MyObj extends Types\TypedObject
+{
+    static function schema()
+    {
+        return array(
+            'a' => self::INT,
+            'b' => self::BOOL,
+        );
+    }
+
+    function checkErrors()
+    {
+        return array();
+    }
+}
+
+$obj = new MyObj;
+
+Types\TypedObject::$preventExtensions = false;
+$obj->c = 'str'; //エラーは起きない
+
+Types\TypedObject::$preventExtensions = true;
+$obj->c = 'str'; //例外発生
+```
+
+### TypedObject::$casting
+
+TypedObjectはプロパティに代入時、schemaと型が違えば例外を発生させます。
+しかしPHPの標準的な挙動のように、違う型を代入しようとしたら型キャストを行ってほしい場合もあるでしょう。例えばデータベースから取り出した文字列からオブジェクトを復元したい場合などです。
+
+TypedObject::$castingをtrueにすると、型が違う代入をしようとしても、なるべくキャストを行おうとします。
+
+### TypedObjectの継承
 
 TypedObjectで作られたクラスを継承する場合、親クラスのschemaは自動的には引き継がれません。extendメソッドを使って明示的に拡張する必要があります。
 
@@ -121,6 +176,7 @@ ConstObjectはTypedObjectを変更不可のオブジェクトにするDecorator�
 <?php
 $const = new ConstObject($typedObject);
 
+echo $const->foo; //参照は透過的に可能
 //$const->foo = 'moo'; どのプロパティに対しても代入操作は常に例外を発生させる
 ```
 
@@ -129,4 +185,18 @@ $const = new ConstObject($typedObject);
 
 ## Spindle\Types\ConstCollection
 
+
+
+License
+-----------------------------
+
+Spindle/Typesの著作権は放棄するものとします。
+利用に際して制限はありませんし、作者への連絡や著作権表示なども必要ありません。
+スニペット的にコードをコピーして使っても問題ありません。
+
+[ライセンスの原文](LICENSE)
+
+CC0-1.0 (No Rights Reserved)
+- https://creativecommons.org/publicdomain/zero/1.0/
+- http://sciencecommons.jp/cc0/about (Japanese)
 
