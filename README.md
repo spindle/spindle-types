@@ -1,14 +1,15 @@
 spindle/types
 =============
 
-PHPにより強い型付けを提供する基底クラス群。
+PHPにより強い型付けを提供する基底クラス群です。
 
 ```sh
-$ composer require spindle/types
+$ composer require 'spindle/types:*'
 ```
 
+## 基本の型
 
-## Spindle\Types\Enum
+### Spindle\Types\Enum
 
 Enumを継承すると列挙型になります。インスタンスは、クラスに定義したconstのいずれかの値であることを型から保証することができます。
 
@@ -35,7 +36,7 @@ function doSomething(Suit $suit)
 }
 ```
 
-## Spindle\Types\TypedObject
+### Spindle\Types\TypedObject
 
 TypedObjectを継承すると、プロパティの型を固定化したクラスを作ることができます。複雑なデータをより確実に扱うことができます。Domain Driven Designにおける"Entity"や"ValueObject"の実装に使えます。
 
@@ -93,11 +94,13 @@ $taro->age = 20;
 TypedObjectはforeachに対応しています。(IteratorAggregate)
 TypedObjectはcount()関数で要素数を数えることができます。(Countable)
 
-### TypedObject::$preventExtensions
+#### TypedObject::$preventExtensions
 
 TypedObjectはデフォルト状態ではschema()で定義されていないプロパティへの代入・参照を拒否します。これはプロパティのタイプミスを発見しやすくする効果がありますが、不便に感じることもあるでしょう。
 
 TypedObject::$preventExtensionsをfalseにすると、未定義のプロパティを拒否せず、自動で拡張するようになります。(デフォルトはtrue)
+
+なお、拡張したプロパティは自動的にmixed(型検査しない)として扱われます。
 
 ```php
 <?php
@@ -128,14 +131,14 @@ Types\TypedObject::$preventExtensions = true;
 $obj->c = 'str'; //例外発生
 ```
 
-### TypedObject::$casting
+#### TypedObject::$casting
 
 TypedObjectはプロパティに代入時、schemaと型が違えば例外を発生させます。
 しかしPHPの標準的な挙動のように、違う型を代入しようとしたら型キャストを行ってほしい場合もあるでしょう。例えばデータベースから取り出した文字列からオブジェクトを復元したい場合などです。
 
 TypedObject::$castingをtrueにすると、型が違う代入をしようとしても、なるべくキャストを行おうとします。
 
-### TypedObjectの継承
+#### TypedObjectの継承
 
 TypedObjectで作られたクラスを継承する場合、親クラスのschemaは自動的には引き継がれません。extendメソッドを使って明示的に拡張する必要があります。
 
@@ -168,7 +171,7 @@ class Boss extends Employee
 }
 ```
 
-## Spindle\Types\ConstObject
+### Spindle\Types\ConstObject
 
 ConstObjectはTypedObjectを変更不可のオブジェクトにするDecoratorです。
 
@@ -180,17 +183,47 @@ echo $const->foo; //参照は透過的に可能
 //$const->foo = 'moo'; どのプロパティに対しても代入操作は常に例外を発生させる
 ```
 
-## Spindle\Types\Collection
+### Spindle\Types\Collection
+
+array()からいくつか制限を追加した配列です。
+
+- 数値の添え字しか許容しない
+- 順番が保証される
+- 必要に応じて、要素の型も固定できる
 
 
-## Spindle\Types\ConstCollection
+### Spindle\Types\ConstCollection
+
+Collectionを読み取り専用にするDecoratorです。
 
 
+## Polyfill
+
+PHPは5.4や5.5から使えるようになった標準インターフェースがいくつか存在します。
+それらをPHP5.3においても使えるようにする目的で、Polyfillを用意しています。
+
+`DateTime implements DateTimeInterface`などの状態を保証するため、独自の名前空間上に配置しています。
+
+### Spindle\Types\Polyfill\JsonSerializable
+
+`JsonSerializable`インターフェース(PHP5.4以降)に相当します。
+
+### Spindle\Types\Polyfill\DateTimeInterface
+
+`DateTimeInterface`インターフェース(PHP5.5以降)に相当します。
+
+### Spindle\Types\Polyfill\DateTime
+
+`DateTimeInterface`をimplementsしたDateTimeです。
+
+### Spindle\Types\Polyfill\DateTimeImmutable
+
+`DateTimeImmutable`(PHP5.5以降)に相当します。状態を変更することができず、modifyやsetTimestampなどのメソッドを作用させると、別のインスタンスを返します。
 
 License
 -----------------------------
 
-Spindle/Typesの著作権は放棄するものとします。
+spindle/typesの著作権は放棄するものとします。
 利用に際して制限はありませんし、作者への連絡や著作権表示なども必要ありません。
 スニペット的にコードをコピーして使っても問題ありません。
 
