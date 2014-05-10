@@ -37,7 +37,7 @@ abstract class Collection extends \SplFixedArray
      * @param bool $save_indexes なるべく元の添え字を保持しようとするかどうか
      * @return static
      */
-    static function fromArray(array $array, $save_indexes=true)
+    static function fromArray($array, $save_indexes=true)
     {
         $splFixedArray = \SplFixedArray::fromArray($array, $save_indexes);
         $cnt = count($array);

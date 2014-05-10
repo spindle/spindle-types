@@ -10,7 +10,7 @@ namespace Spindle\Types\Polyfill;
 if (class_exists('DateTimeImmutable', false)) {
     class DateTimeImmutable extends \DateTimeImmutable implements DateTimeInterface
     {
-        static function createFromFormat($format, $time, \DateTimeZone $timezone=null)
+        static function createFromFormat($format, $time, /* \DateTimeZone */ $timezone=null)
         {
             if ($timezone) {
                 $dateTime = \date_create_from_format($format, $time, $timezone);
@@ -35,7 +35,7 @@ if (class_exists('DateTimeImmutable', false)) {
             return \date_add($new, $interval);
         }
 
-        static function createFromFormat($format, $time, \DateTimeZone $timezone=null)
+        static function createFromFormat($format, $time, /* \DateTimeZone */ $timezone=null)
         {
             if ($timezone) {
                 $dateTime = \date_create_from_format($format, $time, $timezone);

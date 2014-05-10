@@ -8,7 +8,7 @@ namespace Spindle\Types\Polyfill;
 
 class DateTime extends \DateTime implements DateTimeInterface
 {
-    static function createFromFormat($format, $time, \DateTimeZone $timezone=null)
+    static function createFromFormat($format, $time, /* \DateTimeZone */ $timezone=null)
     {
         if ($timezone) {
             $dateTime = \date_create_from_format($format, $time, $timezone);
