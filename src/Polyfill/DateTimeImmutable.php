@@ -29,7 +29,7 @@ if (class_exists('DateTimeImmutable', false)) {
 } else {
     class DateTimeImmutable extends \DateTime implements DateTimeInterface
     {
-        function add(\DateInterval $interval)
+        function add(/* \DateInterval */ $interval)
         {
             $new = clone $this;
             return \date_add($new, $interval);
