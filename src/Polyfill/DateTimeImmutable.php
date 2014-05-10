@@ -75,7 +75,7 @@ if (class_exists('DateTimeImmutable', false)) {
             return \date_timestamp_set($new, $unixtimestamp);
         }
 
-        function setTimezone(\DateTimeZone $timezone)
+        function setTimezone(/* \DateTimeZone */ $timezone)
         {
             $new = clone $this;
             return \date_timezone_set($new, $timezone);
