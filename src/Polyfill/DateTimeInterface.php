@@ -14,7 +14,7 @@ if (interface_exists('DateTimeInterface', false)) {
 } else {
     interface DateTimeInterface
     {
-        function diff(DateTimeInterface $datetime2, $absolute = false);
+        function diff(/* DateTimeInterface */ $datetime2, $absolute = false);
         function format($format);
         function getOffset();
         function getTimestamp();
