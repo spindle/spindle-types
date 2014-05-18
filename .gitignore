@@ -2,3 +2,4 @@ node_modules/
 vendor/
 coverage/
 phpunit.xml
+coverage.clover
