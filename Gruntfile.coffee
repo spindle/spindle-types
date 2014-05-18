@@ -3,11 +3,11 @@ module.exports = (grunt) ->
         shell:
             phpunit:
                 command: 'php -dopen_basedir= vendor/bin/phpunit'
-                options: {stdout: true}
+                options: {stdout: true, stderr: true}
 
             apigen:
                 command: 'php -dopen_basedir= vendor/bin/apigen.php'
-                options: {stdout: true}
+                options: {stdout: true, stderr: true}
 
             pdepend:
                 command: [
@@ -39,4 +39,5 @@ module.exports = (grunt) ->
     require('load-grunt-tasks')(grunt)
 
     grunt.registerTask 'default', ['connect', 'watch']
+    grunt.registerTask 'test', ['shell:phpunit']
     grunt.registerTask 'all', ['shell']
