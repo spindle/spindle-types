@@ -33,7 +33,7 @@ class ConstObject implements
 
     final function __set($name, $value)
     {
-        throw new \DomainException("ConstObject is frozen.");
+        throw new \DomainException(__CLASS__ . "->$name = $value is not allowed.");
     }
 
     function getIterator()

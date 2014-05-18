@@ -54,7 +54,7 @@ abstract class Collection extends \SplFixedArray
      */
     function __get($name)
     {
-        throw new \RuntimeException('__get() is not allowed');
+        throw new \RuntimeException(__CLASS__ . "->$name is not allowed");
     }
 
     /**
@@ -62,6 +62,6 @@ abstract class Collection extends \SplFixedArray
      */
     function __set($name, $value)
     {
-        throw new \RuntimeException('__set() is not allowed');
+        throw new \RuntimeException(__CLASS__ . "->$name = $value is not allowed");
     }
 }
