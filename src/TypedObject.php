@@ -16,11 +16,11 @@ abstract class TypedObject implements
 {
     private $_storage = array();
 
-    static private $_schemaCache = array();
-    static private $_defaultCache = array();
+    private static $_schemaCache = array();
+    private static $_defaultCache = array();
 
-    static $preventExtensions = true;
-    static $casting = false;
+    public static $preventExtensions = true;
+    public static $casting = false;
 
     final function __construct()
     {
@@ -93,6 +93,7 @@ abstract class TypedObject implements
     {
         //parent側を整理
         $parentSchema = array();
+        $lastKey = null;
         foreach ($parent as $key => $val) {
             if (is_int($key)) {
                 $parentSchema[$lastKey][] = $val;
@@ -102,10 +103,10 @@ abstract class TypedObject implements
 
             $lastKey = $key;
         }
-        unset($lastKey);
 
         //child側を整理
         $childSchema = array();
+        $lastKey = null;
         foreach ($child as $key => $val) {
             if (is_int($key)) {
                 $parentSchema[$lastKey][] = $val;
