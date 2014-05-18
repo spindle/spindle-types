@@ -2,6 +2,8 @@ spindle/types
 =============
 
 [![Build Status](https://travis-ci.org/spindle/spindle-types.svg?branch=master)](https://travis-ci.org/spindle/spindle-types)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spindle/spindle-types/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spindle/spindle-types/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/spindle/spindle-types/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/spindle/spindle-types/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/spindle/types/v/stable.png)](https://packagist.org/packages/spindle/types)
 [![Total Downloads](https://poser.pugx.org/spindle/types/downloads.png)](https://packagist.org/packages/spindle/types)
 [![Latest Unstable Version](https://poser.pugx.org/spindle/types/v/unstable.png)](https://packagist.org/packages/spindle/types)
