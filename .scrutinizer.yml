@@ -1,5 +1,9 @@
 imports:
     - php
 
+filter:
+    exclude_paths:
+        - tests/*
+
 tools:
     external_code_coverage: true
