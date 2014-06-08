@@ -13,7 +13,7 @@ class Suit extends Types\Enum
     ;
 }
 
-class EnumTest extends TestCase
+class EnumTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

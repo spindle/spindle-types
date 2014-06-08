@@ -3,7 +3,7 @@ namespace Spindle\Types\Tests;
 
 use Spindle\Types\Polyfill;
 
-class Polyfill_DateTimeTest extends TestCase
+class Polyfill_DateTimeTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

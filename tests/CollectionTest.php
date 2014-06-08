@@ -14,7 +14,7 @@ class StringList extends Types\Collection
     }
 }
 
-class CollectionTest extends TestCase
+class CollectionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

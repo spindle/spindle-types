@@ -22,7 +22,7 @@ class TypedObjectA extends Types\TypedObject
     }
 }
 
-class ConstObjectTest extends TestCase
+class ConstObjectTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

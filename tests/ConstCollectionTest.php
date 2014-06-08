@@ -14,7 +14,7 @@ class IntList extends Types\Collection
     }
 }
 
-class ConstCollectionTest extends TestCase
+class ConstCollectionTest extends \PHPUnit_Framework_TestCase
 {
     private $list;
 

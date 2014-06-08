@@ -45,7 +45,7 @@ class ChildModel extends SomeModel
     }
 }
 
-class TypedObjectTest extends TestCase
+class TypedObjectTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
