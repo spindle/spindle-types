@@ -196,6 +196,24 @@ abstract class TypedObject implements
     }
 
     /**
+     * エラーチェックのためのメソッド。
+     * 要素間の関連であったり、null許可のチェックなどに使ってください。
+     *
+     * ここではデフォルトとしてnullチェックを行います。
+     */
+    function checkErrors()
+    {
+        $errors = array();
+        foreach ($this as $name => $val) {
+            if ($val === null) {
+                $errors[$name][] = 'value is null';
+            }
+        }
+
+        return $errors;
+    }
+
+    /**
      * override \IteratorAggregate::getIterator
      */
     function getIterator()

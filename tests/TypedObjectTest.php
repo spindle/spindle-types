@@ -24,11 +24,6 @@ class SomeModel extends Types\TypedObject
         );
     }
 
-    function checkErrors()
-    {
-        return array();
-    }
-
     function initialize()
     {
         $this->propMix = new \DateTime;
@@ -57,11 +52,6 @@ class RowModel extends Types\TypedObject
             'name' => self::STR,
             'age' => self::INT,
         );
-    }
-
-    function checkErrors()
-    {
-        return array();
     }
 }
 
@@ -92,6 +82,7 @@ class TypedObjectTest extends \PHPUnit_Framework_TestCase
 
         $model->propCal = 'htmlspecialchars';
         self::assertSame('htmlspecialchars', $model->propCal);
+
 
         $model->propMix = 'hogehoge';
         self::assertSame('hogehoge', $model->propMix);
@@ -144,6 +135,9 @@ class TypedObjectTest extends \PHPUnit_Framework_TestCase
         $model = new SomeModel;
         $model->uso800 = 123;
         self::assertSame(123, $model->uso800);
+
+        $model->uso800 = null;
+        self::assertEquals(array('uso800' => array('value is null')), $model->checkErrors());
         Types\TypedObject::$preventExtensions = true;
     }
 

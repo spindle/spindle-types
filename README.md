@@ -102,6 +102,9 @@ $taro->age = 20;
 TypedObjectはforeachに対応しています。(IteratorAggregate)
 TypedObjectはcount()関数で要素数を数えることができます。(Countable)
 
+TypedObjectは`checkErrors()`というメソッドを実装することを推奨します。これは、型だけではチェックしきれないバリデーションを行うためのメソッドです。
+デフォルト実装ではすべてのプロパティがnot nullであることをチェックします。
+
 #### TypedObject::$preventExtensions
 
 TypedObjectはデフォルト状態ではschema()で定義されていないプロパティへの代入・参照を拒否します。これはプロパティのtypoを発見しやすくする効果がありますが、不便に感じることもあるでしょう。
@@ -122,11 +125,6 @@ class MyObj extends Types\TypedObject
             'a' => self::INT,
             'b' => self::BOOL,
         );
-    }
-
-    function checkErrors()
-    {
-        return array();
     }
 }
 
@@ -149,7 +147,7 @@ TypedObject::$castingをtrueにすると、型が違う代入をしようとし�
 #### PDO::FETCH\_CLASSとの組み合わせ
 
 DBからSELECTしてきた結果をTypedObjectへ流し込むことができます。PDOの標準機能として、直接クラスをnewして流し込む`PDO::FETCH_CLASS`というモードがあるので、これを使うとよいでしょう。
-通常、PDOから返るデータはstring型ですので、$castingを有効にしておいてください。
+通常、PDOから渡ってくるデータはstring型ですので、`$casting`オプションを有効にしておいてください。
 
 ```php
 <?php
@@ -166,11 +164,6 @@ class User extends Types\TypedObject
             'name' => self::STR,
             'age' => self::INT
         );
-    }
-
-    function checkErrors()
-    {
-        return array();
     }
 }
 
@@ -193,8 +186,9 @@ foreach ($stmt as $row) {
 ```
 
 注意点として、`PDO::FETCH_CLASS`は通常のオブジェクト初期化と挙動が違い、 **先にセッターを実行してから、コンストラクタを起動** します。TypedObjectはコンストラクタでオブジェクトを初期化しているため、この挙動ではうまく動作しません。
+
 `PDO::FETCH_CLASS`を用いる場合、必ず`PDO::FETCH_PROPS_LATE`を同時に指定してください。
-このオプションを指定すると、コンストラクタが先に起動するようになりますので、正常に動作します。
+このオプションを指定すると、コンストラクタが先に起動するようになり、正常に動作します。
 
 
 #### TypedObjectの継承
@@ -211,11 +205,6 @@ class Employee extends Spindle\Types\TypedObject
             'id' => self::INT, 0,
             'name' => self::STR,
         );
-    }
-
-    function checkErrors()
-    {
-        return array();
     }
 }
 
