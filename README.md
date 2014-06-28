@@ -104,7 +104,7 @@ TypedObjectはcount()関数で要素数を数えることができます。(Coun
 
 #### TypedObject::$preventExtensions
 
-TypedObjectはデフォルト状態ではschema()で定義されていないプロパティへの代入・参照を拒否します。これはプロパティのタイプミスを発見しやすくする効果がありますが、不便に感じることもあるでしょう。
+TypedObjectはデフォルト状態ではschema()で定義されていないプロパティへの代入・参照を拒否します。これはプロパティのtypoを発見しやすくする効果がありますが、不便に感じることもあるでしょう。
 
 TypedObject::$preventExtensionsをfalseにすると、未定義のプロパティを拒否せず、自動で拡張するようになります。(デフォルトはtrue)
 
@@ -145,6 +145,57 @@ TypedObjectはプロパティに代入時、schemaと型が違えば例外を発
 しかしPHPの標準的な挙動のように、違う型を代入しようとしたら型キャストを行ってほしい場合もあるでしょう。例えばデータベースから取り出した文字列からオブジェクトを復元したい場合などです。
 
 TypedObject::$castingをtrueにすると、型が違う代入をしようとしても、なるべくキャストを行おうとします。
+
+#### PDO::FETCH\_CLASSとの組み合わせ
+
+DBからSELECTしてきた結果をTypedObjectへ流し込むことができます。PDOの標準機能として、直接クラスをnewして流し込む`PDO::FETCH_CLASS`というモードがあるので、これを使うとよいでしょう。
+通常、PDOから返るデータはstring型ですので、$castingを有効にしておいてください。
+
+```php
+<?php
+use Spindle\Types;
+
+class User extends Types\TypedObject
+{
+    static $casting = true;
+
+    static function schema()
+    {
+        return array(
+            'userId' => self::INT,
+            'name' => self::STR,
+            'age' => self::INT
+        );
+    }
+
+    function checkErrors()
+    {
+        return array();
+    }
+}
+
+$pdo = new PDO('sqlite::memory:', null, null, array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+));
+$pdo->exec('CREATE TABLE User(userId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)');
+$pdo->exec('INSERT INTO User(name, age) VALUES("taro", 20)');
+$pdo->exec('INSERT INTO User(name, age) VALUES("hanako", 21)');
+
+$stmt = $pdo->prepare('SELECT * FROM User');
+$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, __NAMESPACE__ . '\\RowModel');
+$stmt->execute();
+
+foreach ($stmt as $row) {
+    self::assertInternalType('integer', $row->userId);
+    self::assertInternalType('string',  $row->name);
+    self::assertInternalType('integer', $row->age);
+}
+```
+
+注意点として、`PDO::FETCH_CLASS`は通常のオブジェクト初期化と挙動が違い、 **先にセッターを実行してから、コンストラクタを起動** します。TypedObjectはコンストラクタでオブジェクトを初期化しているため、この挙動ではうまく動作しません。
+`PDO::FETCH_CLASS`を用いる場合、必ず`PDO::FETCH_PROPS_LATE`を同時に指定してください。
+このオプションを指定すると、コンストラクタが先に起動するようになりますので、正常に動作します。
+
 
 #### TypedObjectの継承
 

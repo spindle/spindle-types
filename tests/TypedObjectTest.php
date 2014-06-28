@@ -2,6 +2,7 @@
 namespace Spindle\Types\Tests;
 
 use Spindle\Types;
+use PDO;
 
 //-----setup
 class SomeModel extends Types\TypedObject
@@ -42,6 +43,25 @@ class ChildModel extends SomeModel
             'propRes' => fopen('php://input', 'r'),
             'propAdd' => self::BOOL, true,
         ));
+    }
+}
+
+class RowModel extends Types\TypedObject
+{
+    static $casting = true;
+
+    static function schema()
+    {
+        return array(
+            'userId' => self::INT,
+            'name' => self::STR,
+            'age' => self::INT,
+        );
+    }
+
+    function checkErrors()
+    {
+        return array();
     }
 }
 
@@ -171,5 +191,28 @@ class TypedObjectTest extends \PHPUnit_Framework_TestCase
         self::assertSame(1, $some->propInt);
 
         self::assertTrue(is_array($some->toArray()));
+    }
+
+    /**
+     * @test
+     */
+    function pdoFetchClass()
+    {
+        $pdo = new PDO('sqlite::memory:', null, null, array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ));
+        $pdo->exec('CREATE TABLE User(userId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)');
+        $pdo->exec('INSERT INTO User(name, age) VALUES("taro", 20)');
+        $pdo->exec('INSERT INTO User(name, age) VALUES("hanako", 21)');
+
+        $stmt = $pdo->prepare('SELECT * FROM User');
+        $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, __NAMESPACE__ . '\\RowModel');
+        $stmt->execute();
+
+        foreach ($stmt as $row) {
+            self::assertInternalType('integer', $row->userId);
+            self::assertInternalType('string',  $row->name);
+            self::assertInternalType('integer', $row->age);
+        }
     }
 }
