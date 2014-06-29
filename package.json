@@ -1,9 +1,6 @@
 {
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-shell": "~0.6.4",
-    "load-grunt-tasks": "~0.4.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-connect": "~0.7.1"
+    "gulp": "~3.8.5",
+    "gulp-connect": "~2.0.5"
   }
 }
