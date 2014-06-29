@@ -54,11 +54,11 @@ gulp.task('connect', ['default'], function(){
 });
 
 gulp.task('reload', ['test'], function(){
-    return gulp.src('builds/coverage/*')
+    return gulp.src('builds/coverage/**')
         .pipe(connect.reload());
 });
 
 gulp.task('server', ['connect'], function(){
-    gulp.watch(['src/*', 'tests/*'], ['reload']);
+    gulp.watch(['src/**', 'tests/**'], ['reload']);
 });
 
