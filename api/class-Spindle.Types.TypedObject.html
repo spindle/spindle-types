@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class Spindle\Types\TypedObject | Spindle-Types</title>
+
+	<script type="text/javascript" src="resources/combined.js?3614788191"></script>
+	<script type="text/javascript" src="elementlist.js?1742234966"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-Spindle.html">Spindle<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-Spindle.Types.html">Types<span></span></a>
+						<ul>
+				<li><a href="namespace-Spindle.Types.Internal.html">Internal</a>
+						</li>
+				<li><a href="namespace-Spindle.Types.Polyfill.html">Polyfill</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Spindle.Types.Collection.html">Collection</a></li>
+				<li><a href="class-Spindle.Types.ConstCollection.html">ConstCollection</a></li>
+				<li><a href="class-Spindle.Types.ConstObject.html">ConstObject</a></li>
+				<li><a href="class-Spindle.Types.Enum.html">Enum</a></li>
+				<li class="active"><a href="class-Spindle.Types.TypedObject.html">TypedObject</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Spindle.Types.html" title="Summary of Spindle\Types"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class TypedObject</h1>
+
+
+	<div class="description">
+	
+<p>プロパティの型を保証するオブジェクト</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Spindle\Types\TypedObject</span></b>			
+			 implements 
+				<a href="class-Spindle.Types.Internal.TypedObjectInterface.html"><span>Spindle\Types\Internal\TypedObjectInterface</span></a>, 
+			
+				<a href="class-IteratorAggregate.html"><span>IteratorAggregate</span></a>, 
+			
+				<a href="class-Countable.html"><span>Countable</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Spindle.html">Spindle</a>\<a href="namespace-Spindle.Types.html">Types</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-Spindle.Types.TypedObject.html#9-284" title="Go to source code">TypedObject.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#25-76" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="extend" id="_extend">
+
+		<td class="attributes"><code>
+			final public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extend">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#85-133" title="Go to source code">extend</a>( <span>array <var>$parent</var></span>, <span>array <var>$child</var></span> )</code>
+
+		<div class="description short">
+			
+<p>schema()の定義を継承拡張する</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>schema()の定義を継承拡張する</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$parent</var></dt>
+					<dd><code>array</code><br>$parent parent::schema()の結果</dd>
+					<dt><var>$child</var></dt>
+					<dd><code>array</code><br>$child 拡張するschema定義</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>継承拡張されたschema定義<br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#135-146" title="Go to source code">__get</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__isset" id="___isset">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___isset">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#148-151" title="Go to source code">__isset</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__unset" id="___unset">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___unset">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#153-158" title="Go to source code">__unset</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__set" id="___set">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___set">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#160-208" title="Go to source code">__set</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkErrors" id="_checkErrors">
+
+		<td class="attributes"><code>
+			 public 
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkErrors">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#210-226" title="Go to source code">checkErrors</a>( )</code>
+
+		<div class="description short">
+			
+<p>エラーチェックのためのメソッド。
+要素間の関連であったり、null許可のチェックなどに使ってください。</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>エラーチェックのためのメソッド。
+要素間の関連であったり、null許可のチェックなどに使ってください。</p>
+
+<p>ここではデフォルトとしてnullチェックを行います。</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|null</code><br>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Spindle.Types.Internal.TypedObjectInterface.html#_checkErrors">Spindle\Types\Internal\TypedObjectInterface::checkErrors()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="keys" id="_keys">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_keys">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#228-236" title="Go to source code">keys</a>( )</code>
+
+		<div class="description short">
+			
+<p>クラスが持っている属性の一覧を取得します。</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>クラスが持っている属性の一覧を取得します。</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="className" id="_className">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_className">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#238-246" title="Go to source code">className</a>( )</code>
+
+		<div class="description short">
+			
+<p>クラス名を返します。</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>クラス名を返します。</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#248-254" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			
+<p>override \IteratorAggregate::getIterator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>override \IteratorAggregate::getIterator</p>
+
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="_count">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_count">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#256-262" title="Go to source code">count</a>( )</code>
+
+		<div class="description short">
+			
+<p>override \Countable::count</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>override \Countable::count</p>
+
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Countable.html#_count">Countable::count()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fromArray" id="_fromArray">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Spindle.Types.TypedObject.html">Spindle\Types\TypedObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fromArray">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#264-275" title="Go to source code">fromArray</a>( <span>array <var>$arr</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$arr</var></dt>
+					<dd><code>array</code><br>$arr</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Spindle.Types.TypedObject.html">Spindle\Types\TypedObject</a></code></code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toArray" id="_toArray">
+
+		<td class="attributes"><code>
+			 public 
+			array;
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toArray">#</a>
+		<code><a href="source-class-Spindle.Types.TypedObject.html#277-283" title="Go to source code">toArray</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array;</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Spindle.Types.Internal.TypedObjectInterface.html#methods">Spindle\Types\Internal\TypedObjectInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#_schema">schema()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-Spindle.Types.Internal.TypedObjectInterface.html#constants">Spindle\Types\Internal\TypedObjectInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#ARR"><b>ARR</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#BOOL"><b>BOOL</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#CALL"><b>CALL</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#DBL"><b>DBL</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#INT"><b>INT</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#MIX"><b>MIX</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#OBJ"><b>OBJ</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#RES"><b>RES</b></a>, 
+			<a href="class-Spindle.Types.Internal.TypedObjectInterface.html#STR"><b>STR</b></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="preventExtensions" id="$preventExtensions">
+		<td class="attributes"><code>
+			public static 
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Spindle.Types.TypedObject.html#22" title="Go to source code"><var>$preventExtensions</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">true</span></code></td>
+		<td class="description"><div>
+			<a href="#$preventExtensions" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="casting" id="$casting">
+		<td class="attributes"><code>
+			public static 
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Spindle.Types.TypedObject.html#23" title="Go to source code"><var>$casting</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$casting" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Spindle-Types API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+
+var ApiGen = ApiGen || {};
+ApiGen.elements = [["c","ArrayAccess"],["c","ArrayIterator"],["c","Countable"],["c","DateTime"],["c","DateTimeInterface"],["c","Iterator"],["c","IteratorAggregate"],["c","SeekableIterator"],["c","Serializable"],["c","Spindle\\Types\\Collection"],["c","Spindle\\Types\\ConstCollection"],["c","Spindle\\Types\\ConstObject"],["c","Spindle\\Types\\Enum"],["c","Spindle\\Types\\Internal\\TypedObjectInterface"],["c","Spindle\\Types\\Polyfill\\DateTime"],["c","Spindle\\Types\\Polyfill\\DateTimeImmutable"],["c","Spindle\\Types\\Polyfill\\DateTimeInterface"],["c","Spindle\\Types\\Polyfill\\JsonSerializable"],["c","Spindle\\Types\\TypedObject"],["c","SplFixedArray"],["c","Traversable"]];

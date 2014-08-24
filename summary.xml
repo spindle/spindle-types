@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2014-08-25T00:36:10" pdepend="@package_version@" ahh="0.85714285714286" andc="0" calls="55" ccn="98" ccn2="98" cloc="188" clsa="3" clsc="5" eloc="467" fanout="14" leafs="5" lloc="280" loc="740" maxDIT="2" ncloc="552" noc="8" nof="0" noi="5" nom="55" nop="3" roots="3">
+  <files>
+    <file name="/home/hiraku/workspace/spindle-types/src/Collection.php" cloc="29" eloc="32" lloc="18" loc="68" ncloc="39"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/ConstCollection.php" cloc="32" eloc="37" lloc="16" loc="78" ncloc="46"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/ConstObject.php" cloc="9" eloc="33" lloc="15" loc="49" ncloc="40"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/Enum.php" cloc="5" eloc="37" lloc="20" loc="48" ncloc="43"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/TypedObject.php" cloc="57" eloc="188" lloc="139" loc="285" ncloc="228"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/Polyfill/DateTime.php" cloc="6" eloc="19" lloc="9" loc="27" ncloc="21"/>
+    <file name="/home/hiraku/workspace/spindle-types/src/Polyfill/DateTimeImmutable.php" cloc="11" eloc="74" lloc="39" loc="92" ncloc="81"/>
+  </files>
+  <package name="Spindle\Types" cr="0.15" noc="5" nof="0" noi="0" nom="33" rcr="0.35596153846154">
+    <class name="Collection" ca="1" cbo="2" ce="2" cis="4" cloc="19" cr="0.15" csz="4" dit="2" eloc="23" impl="0" lloc="13" loc="54" ncloc="35" noam="4" nocc="0" nom="4" noom="0" npm="4" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="6" wmci="6" wmcnp="6">
+      <file name="/home/hiraku/workspace/spindle-types/src/Collection.php"/>
+      <method name="offsetSet" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="5" loc="10" ncloc="10" npath="2"/>
+      <method name="fromArray" ccn="2" ccn2="2" cloc="0" eloc="9" lloc="6" loc="11" ncloc="11" npath="2"/>
+      <method name="__get" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="__set" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="ConstCollection" ca="0" cbo="3" ce="3" cis="7" cloc="22" cr="0.15" csz="8" dit="0" eloc="21" impl="3" lloc="7" loc="64" ncloc="42" noam="0" nocc="0" nom="7" noom="0" npm="7" rcr="0.3625" vars="1" varsi="1" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+      <file name="/home/hiraku/workspace/spindle-types/src/ConstCollection.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="offsetGet" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="offsetSet" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="offsetUnset" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="offsetExists" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getIterator" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="count" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="ConstObject" ca="0" cbo="2" ce="2" cis="5" cloc="0" cr="0.15" csz="6" dit="0" eloc="20" impl="2" lloc="8" loc="36" ncloc="36" noam="0" nocc="0" nom="5" noom="0" npm="5" rcr="0.235" vars="1" varsi="1" varsnp="0" wmc="6" wmci="6" wmcnp="6">
+      <file name="/home/hiraku/workspace/spindle-types/src/ConstObject.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="__get" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="4" loc="9" ncloc="9" npath="2"/>
+      <method name="__set" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getIterator" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="count" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="Enum" ca="0" cbo="2" ce="2" cis="4" cloc="0" cr="0.15" csz="6" dit="0" eloc="26" impl="0" lloc="13" loc="39" ncloc="39" noam="0" nocc="0" nom="4" noom="0" npm="4" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="6" wmci="6" wmcnp="6">
+      <file name="/home/hiraku/workspace/spindle-types/src/Enum.php"/>
+      <method name="__construct" ccn="2" ccn2="2" cloc="0" eloc="10" lloc="5" loc="11" ncloc="11" npath="2"/>
+      <method name="__callStatic" ccn="2" ccn2="2" cloc="0" eloc="10" lloc="6" loc="11" ncloc="11" npath="2"/>
+      <method name="valueOf" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="__toString" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="TypedObject" ca="1" cbo="4" ce="4" cis="15" cloc="49" cr="0.15" csz="18" dit="0" eloc="162" impl="3" lloc="120" loc="273" ncloc="224" noam="0" nocc="0" nom="13" noom="0" npm="13" rcr="0.3625" vars="5" varsi="5" varsnp="2" wmc="57" wmci="57" wmcnp="57">
+      <file name="/home/hiraku/workspace/spindle-types/src/TypedObject.php"/>
+      <method name="__construct" ccn="17" ccn2="17" cloc="3" eloc="38" lloc="36" loc="52" ncloc="49" npath="112"/>
+      <method name="extend" ccn="7" ccn2="7" cloc="4" eloc="31" lloc="21" loc="42" ncloc="38" npath="27"/>
+      <method name="__get" ccn="3" ccn2="3" cloc="0" eloc="9" lloc="5" loc="12" ncloc="12" npath="4"/>
+      <method name="__isset" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="__unset" ccn="2" ccn2="2" cloc="0" eloc="5" lloc="2" loc="6" ncloc="6" npath="2"/>
+      <method name="__set" ccn="17" ccn2="17" cloc="0" eloc="45" lloc="41" loc="49" ncloc="49" npath="45"/>
+      <method name="checkErrors" ccn="3" ccn2="3" cloc="0" eloc="9" lloc="5" loc="11" ncloc="11" npath="3"/>
+      <method name="keys" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="className" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="getIterator" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="count" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="fromArray" ccn="2" ccn2="2" cloc="0" eloc="7" lloc="4" loc="8" ncloc="8" npath="2"/>
+      <method name="toArray" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+    </class>
+  </package>
+  <package name="Spindle\Types\Polyfill" cr="0.15" noc="3" nof="0" noi="4" nom="20" rcr="0.19903846153846">
+    <class name="DateTime" ca="0" cbo="0" ce="0" cis="2" cloc="1" cr="0.15" csz="2" dit="2" eloc="12" impl="2" lloc="6" loc="18" ncloc="17" noam="2" nocc="0" nom="2" noom="0" npm="2" rcr="0.292375" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
+      <file name="/home/hiraku/workspace/spindle-types/src/Polyfill/DateTime.php"/>
+      <method name="createFromFormat" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="4" loc="9" ncloc="9" npath="2"/>
+      <method name="__set_state" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+    </class>
+    <class name="DateTimeImmutable" ca="1" cbo="0" ce="0" cis="2" cloc="1" cr="0.15" csz="2" dit="2" eloc="12" impl="2" lloc="6" loc="18" ncloc="17" noam="2" nocc="0" nom="2" noom="0" npm="2" rcr="0.356125" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
+      <file name="/home/hiraku/workspace/spindle-types/src/Polyfill/DateTimeImmutable.php"/>
+      <method name="createFromFormat" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="4" loc="9" ncloc="9" npath="2"/>
+      <method name="__set_state" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+    </class>
+    <class name="DateTimeImmutable" ca="0" cbo="1" ce="1" cis="9" cloc="3" cr="0.15" csz="9" dit="2" eloc="40" impl="2" lloc="20" loc="60" ncloc="57" noam="9" nocc="0" nom="9" noom="0" npm="9" rcr="0.292375" vars="0" varsi="0" varsnp="0" wmc="10" wmci="10" wmcnp="10">
+      <file name="/home/hiraku/workspace/spindle-types/src/Polyfill/DateTimeImmutable.php"/>
+      <method name="add" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="createFromFormat" ccn="2" ccn2="2" cloc="0" eloc="8" lloc="4" loc="9" ncloc="9" npath="2"/>
+      <method name="modify" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="setDate" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="setISODate" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="setTime" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="setTimestamp" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="setTimezone" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="__set_state" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+    </class>
+  </package>
+</metrics>

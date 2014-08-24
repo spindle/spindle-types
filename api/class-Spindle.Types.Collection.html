@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class Spindle\Types\Collection | Spindle-Types</title>
+
+	<script type="text/javascript" src="resources/combined.js?3614788191"></script>
+	<script type="text/javascript" src="elementlist.js?1742234966"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-Spindle.html">Spindle<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-Spindle.Types.html">Types<span></span></a>
+						<ul>
+				<li><a href="namespace-Spindle.Types.Internal.html">Internal</a>
+						</li>
+				<li><a href="namespace-Spindle.Types.Polyfill.html">Polyfill</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Spindle.Types.Collection.html">Collection</a></li>
+				<li><a href="class-Spindle.Types.ConstCollection.html">ConstCollection</a></li>
+				<li><a href="class-Spindle.Types.ConstObject.html">ConstObject</a></li>
+				<li><a href="class-Spindle.Types.Enum.html">Enum</a></li>
+				<li><a href="class-Spindle.Types.TypedObject.html">TypedObject</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Spindle.Types.html" title="Summary of Spindle\Types"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Collection</h1>
+
+
+	<div class="description">
+	
+<p>厳密な配列を実現するクラス。
+添え字は0から始まり、必ず順番が守られる。
+文字列の添え字は許可されない。</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-SplFixedArray.html"><span>SplFixedArray</span></a>
+			
+			 implements 
+				<a href="class-Iterator.html"><span>Iterator</span></a>, 
+			
+				<a href="class-Traversable.html"><span>Traversable</span></a>, 
+			
+				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>, 
+			
+				<a href="class-Countable.html"><span>Countable</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Spindle\Types\Collection</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Spindle.html">Spindle</a>\<a href="namespace-Spindle.Types.html">Types</a><br>
+		
+
+		<b>Located at</b> <a href="source-class-Spindle.Types.Collection.html#9-67" title="Go to source code">Collection.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Spindle.Types.Collection.html#16-31" title="Go to source code">offsetSet</a>( <span>integer <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>SplFixedArrayは固定長になってしまうため、自動伸長機能を追加</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>SplFixedArrayは固定長になってしまうため、自動伸長機能を追加</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd><code>integer</code><br>$offset</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>mixed</code><br>$value</dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-SplFixedArray.html#_offsetSet">SplFixedArray::offsetSet()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fromArray" id="_fromArray">
+
+		<td class="attributes"><code>
+			 public static
+			static
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fromArray">#</a>
+		<code><a href="source-class-Spindle.Types.Collection.html#33-50" title="Go to source code">fromArray</a>( <span>array <var>$array</var></span>, <span>boolean <var>$save_indexes</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+<p>SplFixedArray固定ではなく、継承した子クラスを返すように拡張</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>SplFixedArray固定ではなく、継承した子クラスを返すように拡張</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$array 元にする配列</dd>
+					<dt><var>$save_indexes</var></dt>
+					<dd><code>boolean</code><br>$save_indexes なるべく元の添え字を保持しようとするかどうか</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>static</code><br>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-SplFixedArray.html#_fromArray">SplFixedArray::fromArray()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-Spindle.Types.Collection.html#52-58" title="Go to source code">__get</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getterは許可しない</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getterは許可しない</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__set" id="___set">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___set">#</a>
+		<code><a href="source-class-Spindle.Types.Collection.html#60-66" title="Go to source code">__set</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setterは許可しない</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setterは許可しない</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-SplFixedArray.html#methods">SplFixedArray</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SplFixedArray.html#___construct">__construct()</a>, 
+			<a href="class-SplFixedArray.html#___wakeup">__wakeup()</a>, 
+			<a href="class-SplFixedArray.html#_count">count()</a>, 
+			<a href="class-SplFixedArray.html#_current">current()</a>, 
+			<a href="class-SplFixedArray.html#_getSize">getSize()</a>, 
+			<a href="class-SplFixedArray.html#_key">key()</a>, 
+			<a href="class-SplFixedArray.html#_next">next()</a>, 
+			<a href="class-SplFixedArray.html#_offsetExists">offsetExists()</a>, 
+			<a href="class-SplFixedArray.html#_offsetGet">offsetGet()</a>, 
+			<a href="class-SplFixedArray.html#_offsetUnset">offsetUnset()</a>, 
+			<a href="class-SplFixedArray.html#_rewind">rewind()</a>, 
+			<a href="class-SplFixedArray.html#_setSize">setSize()</a>, 
+			<a href="class-SplFixedArray.html#_toArray">toArray()</a>, 
+			<a href="class-SplFixedArray.html#_valid">valid()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Spindle-Types API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
