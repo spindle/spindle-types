@@ -1,0 +1,29 @@
+body {
+  font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+}
+
+.content {
+  text-align: center;
+}
+
+ul.menu {
+  margin: 100px;
+}
+
+ul.menu li {
+  display: inline;
+  background: #3498db;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow:rgba(0, 0, 0, 0.52) 1px 1px 1px 1px;
+}
+
+ul.menu li:hover {
+  box-shadow:rgba(0, 0, 0, 0.52) 6px 6px 6px 0px;
+}
+
+ul.menu li a {
+  color: white;
+  text-decoration: none;
+}
