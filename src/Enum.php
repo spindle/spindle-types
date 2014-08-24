@@ -9,6 +9,7 @@ namespace Spindle\Types;
 abstract class Enum
 {
     private $scalar;
+    private static $cache = array();
 
     function __construct($value)
     {
@@ -25,8 +26,13 @@ abstract class Enum
     final static function __callStatic($name, $args)
     {
         $class = get_called_class();
-        $const = constant("$class::$name");
-        return new $class($const);
+        $constantName = "$class::$name";
+        if (isset(self::$cache[$constantName])) {
+            return self::$cache[$constantName];
+        } else {
+            $const = constant($constantName);
+            return self::$cache[$constantName] = new $class($const);
+        }
     }
 
     final function valueOf()

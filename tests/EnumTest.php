@@ -33,6 +33,10 @@ class EnumTest extends \PHPUnit_Framework_TestCase
         $suit = Suit::SPADE();
         self::assertSame(Suit::SPADE, (string)$suit);
         self::assertSame(Suit::SPADE, $suit->valueOf());
+
+        // cached item
+        $suit2 = Suit::SPADE();
+        self::assertSame($suit, $suit2);
     }
 
     /**
