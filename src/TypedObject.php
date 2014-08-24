@@ -145,6 +145,18 @@ abstract class TypedObject implements
         return null;
     }
 
+    final function __isset($name)
+    {
+        return isset($this->_storage[$name]);
+    }
+
+    final function __unset($name)
+    {
+        if (isset($this->_storage[$name])) {
+            $this->_storage[$name] = null;
+        }
+    }
+
     final function __set($name, $value)
     {
         $class = get_class($this);
@@ -211,6 +223,26 @@ abstract class TypedObject implements
         }
 
         return $errors;
+    }
+
+    /**
+     * クラスが持っている属性の一覧を取得します。
+     *
+     * @return array
+     */
+    function keys()
+    {
+        return array_keys($this->_storage);
+    }
+
+    /**
+     * クラス名を返します。
+     *
+     * @return string
+     */
+    static function className()
+    {
+        return get_called_class();
     }
 
     /**

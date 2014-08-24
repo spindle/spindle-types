@@ -70,6 +70,15 @@ class TypedObjectTest extends \PHPUnit_Framework_TestCase
         self::assertSame(true, $model->propBoo);
         self::assertInstanceOf('DateTime', $model->propMix);
         self::assertCount(9, $model);
+
+        $keys = array(
+            'propInt', 'propDbl', 'propStr', 'propBoo',
+            'propRes', 'propArr', 'propDat', 'propCal',
+            'propMix',
+        );
+        self::assertEquals($keys, $model->keys());
+        self::assertSame('Spindle\Types\Tests\SomeModel', $model->className());
+        self::assertSame('Spindle\Types\Tests\SomeModel', SomeModel::className());
     }
 
     /**
@@ -89,6 +98,11 @@ class TypedObjectTest extends \PHPUnit_Framework_TestCase
 
         $model->propDat = new \DateTime;
         self::assertInstanceOf('DateTime', $model->propDat);
+
+        self::assertTrue(isset($model->propDat));
+
+        unset($model->propDat);
+        self::assertNull($model->propDat);
     }
 
     /**
