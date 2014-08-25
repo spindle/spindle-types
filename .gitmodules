@@ -1,4 +1,0 @@
-[submodule "builds"]
-	path = builds
-	url = git@github.com:spindle/spindle-types.git
-	branch = gh-pages
