@@ -8,6 +8,9 @@
             "email": "hiraku@tojiru.net"
         }
     ],
+    "scripts": {
+        "test": "phpunit"
+    },
     "require": {
         "php": ">=5.3.2"
     },
@@ -16,11 +19,9 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "apigen/apigen": "*",
         "pdepend/pdepend": "*",
-        "nette/nette": "<2.2",
-        "dg/texy": "<v2.5",
-        "ext-pdo_sqlite": "*"
+        "ext-pdo_sqlite": "*",
+        "hirak/apigen2.8.0": "*"
     },
     "archive": {
         "exclude": [
