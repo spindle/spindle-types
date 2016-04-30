@@ -18,10 +18,14 @@
         "psr-4": {"Spindle\\Types\\": "src/"}
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "pdepend/pdepend": "*",
         "ext-pdo_sqlite": "*",
-        "hirak/apigen2.8.0": "*"
+        "phpunit/phpunit": "*",
+        "pdepend/pdepend": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "5.3.29"
+        }
     },
     "archive": {
         "exclude": [
